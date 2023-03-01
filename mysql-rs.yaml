@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+
+kind: ReplicaSet
+
+metadata:
+
+  name: mysql
+  
+spec:
+
+  # modify replicas according to your case
+
+  replicas: 3
+
+  selector:
+
+    matchLabels:
+
+      app: mysql
+
+  template:
+
+    metadata:
+
+      labels:
+
+        app: mysql
+
+    spec:
+    
+      containers:
+    
+        - name: mysql
+    
+          image: 472108177454.dkr.ecr.us-east-1.amazonaws.com/my_db:final
+    
+          env:
+    
+            - name: MYSQL_ROOT_PASSWORD
+    
+              value: "pw"
+          ports:
+            - containerPort: 3306
