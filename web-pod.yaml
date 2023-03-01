@@ -4,23 +4,23 @@ kind: Pod
 
 metadata:
 
-  name: myapp
+  name: web
   labels: 
-    app: frontend
+    app: employees
 
 spec:
 
   containers:
 
-    - name: myapp
+    - name: web
 
-      image: 472108177454.dkr.ecr.us-east-1.amazonaws.com/my_app:latest
+      image: 472108177454.dkr.ecr.us-east-1.amazonaws.com/my_app:final
 
       env:
 
         - name: DBHOST
 
-          value: "mongo"
+          value: "mysql.mysql.svc.cluster.local"
         
         - name: DBPORT
 
@@ -34,8 +34,5 @@ spec:
 
           value: "pw"
           
-        - name: APP_COLOR
-
-          value: "pink"
       ports:
         - containerPort: 8080  

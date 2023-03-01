@@ -4,7 +4,7 @@ kind: Pod
 
 metadata:
 
-  name: mydb
+  name: mysql
   labels:
     app: mysql
 
@@ -12,9 +12,9 @@ spec:
 
   containers:
 
-    - name: mydb
+    - name: mysql
 
-      image: 472108177454.dkr.ecr.us-east-1.amazonaws.com/my_db:latest
+      image: 472108177454.dkr.ecr.us-east-1.amazonaws.com/my_db:final
 
       env:
 
