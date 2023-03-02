@@ -10,7 +10,7 @@ spec:
     image: 472108177454.dkr.ecr.us-east-1.amazonaws.com/web:v2.0
     env:
     - name: DBHOST
-      value: "mysql.mysql"
+      value: "mysql.mysql.svc.cluster.local"
     - name: DBPORT
       value: "3306"
     - name: DBUSER
