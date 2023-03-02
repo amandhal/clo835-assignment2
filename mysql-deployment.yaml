@@ -1,44 +1,24 @@
 apiVersion: apps/v1
-
 kind: Deployment
-
 metadata:
-
   name: mysql
-
+  labels:
+    app: mysql
 spec:
-
-  # modify replicas according to your case
-
   replicas: 3
-
   selector:
-
     matchLabels:
-
       app: mysql
-
   template:
-
     metadata:
-
       labels:
-
         app: mysql
-
     spec:
-    
       containers:
-    
-        - name: mysql
-    
-          image: 472108177454.dkr.ecr.us-east-1.amazonaws.com/mysql:2
-    
-          env:
-    
-            - name: MYSQL_ROOT_PASSWORD
-    
-              value: "pw"
-          ports:
-            - containerPort: 3306
-       
+      - name: mysql
+        image: 472108177454.dkr.ecr.us-east-1.amazonaws.com/mysql:v2.0
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: "pw"
+        ports:
+        - containerPort: 3306

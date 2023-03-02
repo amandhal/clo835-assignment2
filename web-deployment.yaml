@@ -1,54 +1,30 @@
 apiVersion: apps/v1
-
 kind: Deployment
-
 metadata:
-
   name: web
-
+  labels:
+    app: employees
 spec:
-
   replicas: 3
-
   selector:
-
     matchLabels:
-
       app: employees
-
   template:
-
     metadata:
-
       labels:
-
         app: employees
-
     spec:
-    
       containers:
-    
-        - name: web
-    
-          image: 472108177454.dkr.ecr.us-east-1.amazonaws.com/web:2
-    
-          env:
-    
-            - name: DBHOST
-    
-              value: "mysql.mysql.svc.cluster.local"
-            
-            - name: DBPORT
-    
-              value: "3306"
-              
-            - name: DBUSER
-    
-              value: "root"
-              
-            - name: DBPWD
-    
-              value: "pw"
-              
-          ports:
-            - containerPort: 8080
+      - name: web
+        image: 472108177454.dkr.ecr.us-east-1.amazonaws.com/web:v2.0
+        env:
+        - name: DBHOST
+          value: "mysql.mysql"
+        - name: DBPORT
+          value: "3306"
+        - name: DBUSER
+          value: "root"
+        - name: DBPWD
+          value: "pw"
+        ports:
+        - containerPort: 8080
