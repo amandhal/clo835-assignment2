@@ -3,7 +3,7 @@
 
 
 ### Use the following Repo to push images to Amazon ECR
-```https://github.com/amandhal/ec2_ecr.git```
+```https://github.com/amandhal/clo835-assignment1.git```
 
 
 ### Login to EC2 instance
