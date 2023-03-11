@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: web
-        image: 472108177454.dkr.ecr.us-east-1.amazonaws.com/web:v2.0
+        image: 472108177454.dkr.ecr.us-east-1.amazonaws.com/web:2
         env:
         - name: DBHOST
           value: "mysql.mysql"
